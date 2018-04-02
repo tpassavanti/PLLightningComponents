@@ -1,0 +1,151 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="Scenario" type="PLNDR__PrecisionLender_Scenario__c" />
+    
+    <force:recordData recordId="{!v.recordId}"
+                      targetFields="{!v.PLNDR__PrecisionLender_Scenario__c}"
+                      layoutType="FULL"
+                      />
+    
+     <lightning:card iconName="standard:record" title="PrecisionLender Scenario Details" class="slds-box slds-theme_shade">
+        
+         <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="PLNDR__PrecisionLender_Scenario__c">
+             <!-- <div class="slds-box slds-theme_shade"> -->
+                 <Lightning:card title="Scenario Summary" >
+                     <table class="slds-table slds-table_bordered slds-max-medium-table_stacked slds-no-row-hover">
+                         <tbody>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Scenario_Name__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__Is_Pipeline__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__Scenario_Type__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__Scenario_Description__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <br />
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Loan_Gross_Funding__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Loan_Commitment__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Loan_Net_Funding__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Loan_Average_Balance__c" />
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </Lightning:card>
+                 <Lightning:card title="Scenario Financial Statment" >
+                     <table class="slds-table slds-table_bordered slds-max-medium-table_stacked slds-no-row-hover">
+                         <tbody>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__FS_Interest_Income__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Average_Yield__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Interest_Expense__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Net_Interest_Income__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Net_Interest_Margin__c" />
+                                 </td>
+                             </tr>
+                             <br />
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Non_Interest_Expense__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Other_Income__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Loan_Loss_Reserves__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Pre_Tax_Income__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Taxes__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Net_Income__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_ROA__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Target_Net_Income__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Target_ROA__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <br />
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Average_Assets__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Target_ROE__c" />
+                                 </td>
+                             </tr>
+                             
+                             <tr>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Average_Equity__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__FS_Target_ROE__c" />
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </Lightning:card>
+                 
+            <!-- </div> -->
+             
+         </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>

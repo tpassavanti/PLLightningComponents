@@ -1,0 +1,65 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <lightning:card iconName="standard:record" title="Commercial Loan Account Details" >
+        
+         <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="PLNDR__Commercial_Loan_Account__c">
+             <!-- <div class="slds-box slds-theme_shade"> -->
+                 <Lightning:card title="PrecisionLender Pricing Details" class="slds-theme_shade" >
+                     <table class="slds-table slds-table_bordered slds-max-medium-table_stacked slds-no-row-hover">
+                         <tbody>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Product_Name__c" />
+                                 </td>
+                                 <td> </td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Amount__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__Initial_Fees__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Initial_Rate__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Payment_Type__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Interest_Options__c" />
+                                 </td>
+                                 <td>
+                                     <lightning:outputField fieldName="PLNDR__Risk_Rating__c" />
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2">
+                                     <lightning:outputField fieldName="PLNDR__Maturity__c" />
+                                 </td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td class="slds-size_1-of-2" rendered="(IF(PLNDR__Payment_Type__c=='Amortizing'),true,false)">
+                                     <!-- <Aura:renderIf isTrue="{!PLNDR__Payment_Type__c=='Amortizing'}"> -->
+                                         <lightning:outputField fieldName="PLNDR__Amortization__c" />
+                                     <!-- </Aura:renderIf> -->
+                                 </td>
+                                 <td>
+                                     <!-- <lightning:outputField fieldName="PLNDR__Amortization_Notes__c" rendered="{! Commercial_Loan_Account__c.Payment_Type__c = 'Amortizing'}"/> -->
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+             </Lightning:card>
+        </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>
